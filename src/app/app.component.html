@@ -1,8 +1,23 @@
-<div class="pipes">
-  <h1>Pipes</h1>
-  <h2>Built-in-pipes</h2>
-  <p>{{myValue}}</p>
-  <p>{{myValue | uppercase}}</p>
-  <p>{{date | date:"dd-MMM-yyyy" | uppercase}}</p>
-  <p>{{myValue | slice:3:7 | uppercase}}</p>
+<div class="container">
+  <div class="row">
+    <h1>Pipe</h1>
+    <div class="col-sm-12">
+      <h2>Built-in-pipes</h2>
+      <p class="col-sm-3">{{myValue}}</p>
+      <p class="col-sm-3">{{myValue | uppercase}}</p>
+      <p class="col-sm-3">{{date | date:"dd-MMM-yyyy" | uppercase}}</p>
+      <p class="col-sm-3">{{myValue | slice:3:7 | uppercase}}</p>
+    </div>
+    <div class="col-sm-12">
+      <h2>Custom Pipe</h2>
+      <div class="col-sm-6">
+        <input type="text" #input (keyup)="0" title="value">
+      </div>
+      <div class="col-sm-6">
+        <label class="col-sm-3">Double : </label>
+        <p class="col-sm-3">{{input.value | double}}</p>
+      </div>
+
+    </div>
+  </div>
 </div>
