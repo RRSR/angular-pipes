@@ -2,22 +2,39 @@
   <div class="row">
     <h1>Pipe</h1>
     <div class="col-sm-12">
-      <h2>Built-in-pipes</h2>
+      <h2>Built-in Pipes</h2>
       <p class="col-sm-3">{{myValue}}</p>
       <p class="col-sm-3">{{myValue | uppercase}}</p>
       <p class="col-sm-3">{{date | date:"dd-MMM-yyyy" | uppercase}}</p>
       <p class="col-sm-3">{{myValue | slice:3:7 | uppercase}}</p>
     </div>
     <div class="col-sm-12">
-      <h2>Custom Pipe</h2>
-      <div class="col-sm-6">
-        <input type="text" #input (keyup)="0" title="value">
+      <h2>Custom Pipes</h2>
+      <div class="col-sm-12">
+        <h3>Double Pipe</h3>
+        <div class="col-sm-6">
+          <label class="col-sm-2">Value : </label>
+          <input class="col-sm-4" type="text" #input (keyup)="0" title="value">
+        </div>
+        <div class="col-sm-6">
+          <label class="col-sm-2">Double : </label>
+          <p class="col-sm-4">{{input.value | double}}</p>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <label class="col-sm-3">Double : </label>
-        <p class="col-sm-3">{{input.value | double}}</p>
+      <div class="col-sm-12">
+        <h3>Filter Pipe</h3>
+        <div class="col-sm-6">
+          <label class="col-sm-2">Value : </label>
+          <input class="col-sm-4" type="text" #text (keyup)="0">
+        </div>
+        <div class="col-sm-12">
+          <ul>
+            <li *ngFor="let item of myList | filter:text.value"
+                class="col-sm-3">{{item}}
+            </li>
+          </ul>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
