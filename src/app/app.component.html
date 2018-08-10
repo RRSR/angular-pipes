@@ -24,6 +24,14 @@
       <div class="col-sm-12">
         <h3>Filter Pipe</h3>
         <div class="col-sm-6">
+          <div class="col-sm-6">
+            <input type="text" #newItem>
+          </div>
+          <div class="col-sm-6">
+            <button class="btn btn-primary" (click)="myList.push(newItem.value);newItem.value= ''"> Add Item</button>
+          </div>
+        </div>
+        <div class="col-sm-6">
           <label class="col-sm-2">Value : </label>
           <input class="col-sm-4" type="text" #text (keyup)="0">
         </div>
@@ -35,6 +43,7 @@
           </ul>
         </div>
       </div>
+      <p>The Async data : {{asyncValue | async}}</p>
     </div>
   </div>
 </div>
